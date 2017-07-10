@@ -61,16 +61,16 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right ">
-                <form class="navbar-form navbar-left">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
+                <form action="Search" class="navbar-form navbar-left">
+                        <div class="input-group">
+                            <input type="text" name="movie_name" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
                 <li><a href="loggedShoppingCart.jsp"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-heart"></span> Wish List</a></li>
                 <li class="dropdown">
@@ -88,13 +88,6 @@
     </nav>
 
     <div class="webIntro" style="margin-top: 100px;" >
-        <form action="Home">
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
-                    <i class="glyphicon glyphicon-refresh"></i>
-                </button> 
-            </div>
-        </form>
         <h1 style="text-align: center" >Rent the latest movies with the <strong>cheapest</strong> price !</h1>
         <h3 style="text-align: center;margin-top: 50px;" >Welcome to <strong>movie rental</strong></h4>
     </div>

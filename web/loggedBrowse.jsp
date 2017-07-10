@@ -53,14 +53,14 @@
                     <a class="navbar-brand" href="loggedHome.jsp" ><strong style="color:#F5F5F5">Movies</strong> Rental</a>
                 </div>
                 <ul class="nav navbar-nav navbar-left">
-                    <li ><a href="loggedHome.jsp">Home</a></li>
+                    <li ><a href="/Movie_Rental/Home">Home</a></li>
                     <li class="active"><a href="#">Browse</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right ">
-                    <form class="navbar-form navbar-left">
+                    <form action="Search" class="navbar-form navbar-left">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" name="movie_name" class="form-control" placeholder="Search">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <i class="glyphicon glyphicon-search"></i>

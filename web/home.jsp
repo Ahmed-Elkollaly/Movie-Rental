@@ -57,6 +57,8 @@
         </style>
     </head>
     <body  > 
+      
+        
         <script type="text/javascript">
                 
             function myEnterFunction(){
@@ -86,9 +88,9 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right ">
-                    <form class="navbar-form navbar-left">
+                    <form action="Search" class="navbar-form navbar-left">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" name="movie_name" class="form-control" placeholder="Search">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <i class="glyphicon glyphicon-search"></i>
@@ -118,14 +120,6 @@
 
             %>
 
-
-            <form action="Home">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-refresh"></i>
-                    </button> 
-                </div>
-            </form>
             <h1 style="text-align: center" >Rent the latest movies with the <strong>cheapest</strong> price !</h1>
             <h3 style="text-align: center;margin-top: 50px;" >Welcome to <strong>movie rental</strong></h4>
         </div>

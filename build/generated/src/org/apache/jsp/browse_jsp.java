@@ -51,6 +51,7 @@ public final class browse_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Browse | Movie Rental</title>\n");
       out.write("        <link rel=\"stylesheet\" href=\"lib/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
@@ -90,17 +91,17 @@ public final class browse_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"container-fluid\">\n");
       out.write("\n");
       out.write("                <div class=\"navbar-header\">\n");
-      out.write("                    <a class=\"navbar-brand\" href=\"Home Page.html\" ><strong style=\"color:#F5F5F5\">Movies</strong> Rental</a>\n");
+      out.write("                    <a class=\"navbar-brand\" href=\"home.jsp\" ><strong style=\"color:#F5F5F5\">Movies</strong> Rental</a>\n");
       out.write("                </div>\n");
       out.write("                <ul class=\"nav navbar-nav navbar-left\">\n");
-      out.write("                    <li ><a href=\"Home Page.html\">Home</a></li>\n");
-      out.write("                    <li class=\"active\"><a href=\"Browse Page.html\">Browse</a></li>\n");
+      out.write("                    <li ><a href=\"home.jsp\">Home</a></li>\n");
+      out.write("                    <li class=\"active\"><a href=\"browse.jsp\">Browse</a></li>\n");
       out.write("                </ul>\n");
       out.write("\n");
       out.write("                <ul class=\"nav navbar-nav navbar-right \">\n");
-      out.write("                    <form class=\"navbar-form navbar-left\">\n");
+      out.write("                    <form action=\"Search\" class=\"navbar-form navbar-left\">\n");
       out.write("                        <div class=\"input-group\">\n");
-      out.write("                            <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n");
+      out.write("                            <input type=\"text\" name=\"movie_name\" class=\"form-control\" placeholder=\"Search\">\n");
       out.write("                            <div class=\"input-group-btn\">\n");
       out.write("                                <button class=\"btn btn-default\" type=\"submit\">\n");
       out.write("                                    <i class=\"glyphicon glyphicon-search\"></i>\n");
@@ -108,9 +109,9 @@ public final class browse_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </div>\n");
       out.write("                        </div>\n");
       out.write("                    </form>\n");
-      out.write("                    <li ><a href=\"shoppingcart.html\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Shopping Cart</a></li>\n");
+      out.write("                    <li ><a href=\"#\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Shopping Cart</a></li>\n");
       out.write("                    <li><a href=\"#\"><span class=\"glyphicon glyphicon-heart\"></span> Wish List</a></li>\n");
-      out.write("                    <li><a href=\"Signup Page.html\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\n");
+      out.write("                    <li><a href=\"register.jsp\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\n");
       out.write("                    <li><a data-toggle=\"modal\" href=\"#Login\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n");
       out.write("                </ul>\n");
       out.write("            </div>\n");
@@ -228,7 +229,40 @@ public final class browse_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
-      out.write("       \n");
+      out.write("        ");
+ 
+            Movie movie_result = (Movie) request.getAttribute("movie");
+            if(movie_result!=null){
+                String srcName = "img/"+movie_result.getName()+".jpg"; 
+        
+      out.write("\n");
+      out.write("        <div class=\"card \" style=\"width:210px;margin: 60px\">\n");
+      out.write("\n");
+      out.write("                    <img class=\"img-responsive\" src= \"");
+      out.print(srcName);
+      out.write("\" alt=\"Avatar\" style=\"width:100%;height:315px;\" >\n");
+      out.write("                    <div class=\"container\" style=\"width: 100%;\">\n");
+      out.write("                        <h5 style=\"height: 25px\"><b>");
+      out.print(movie_result.getName());
+      out.write(' ');
+      out.write(' ');
+      out.print(movie_result.getYear());
+      out.write("  </b></h5>\n");
+      out.write("                            <p>\n");
+      out.write("                                <a href=\"#\" style=\" width: 100%;height:30px\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-info-sign\"></span> View Details</a>\n");
+      out.write("                            </p>\n");
+      out.write("\n");
+      out.write("                            <p style=\"margin-top:5px;text-align:center\" >\n");
+      out.write("                                <a href=\"#\" style=\"height:30px\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-plus\"></span> Cart</a> <a href=\"#\" style=\"height:30px\" class=\"btn btn-primary\" ><span class=\"glyphicon glyphicon-plus\"></span> Wish List</a>\n");
+      out.write("                            </p>\n");
+      out.write("\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("        ");
+
+            }
+        
+      out.write("\n");
       out.write("        ");
 
 // retrieve your list from the request, with casting 

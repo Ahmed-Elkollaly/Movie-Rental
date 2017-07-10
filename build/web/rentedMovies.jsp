@@ -75,16 +75,16 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right ">
-                <form class="navbar-form navbar-left">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-                                <i class="glyphicon glyphicon-search"></i>
-                            </button>
+                <form action="Search" class="navbar-form navbar-left">
+                        <div class="input-group">
+                            <input type="text" name="movie_name" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-heart"></span> Wish List</a></li>
                 <li class="dropdown active">

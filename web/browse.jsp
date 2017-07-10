@@ -58,9 +58,9 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right ">
-                    <form class="navbar-form navbar-left">
+                    <form action="Search" class="navbar-form navbar-left">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" name="movie_name" class="form-control" placeholder="Search">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <i class="glyphicon glyphicon-search"></i>
@@ -188,7 +188,29 @@
 
             </div>
         </div>
-       
+        <% 
+            Movie movie_result = (Movie) request.getAttribute("movie");
+            if(movie_result!=null){
+                String srcName = "img/"+movie_result.getName()+".jpg"; 
+        %>
+        <div class="card " style="width:210px;margin: 60px">
+
+                    <img class="img-responsive" src= "<%=srcName%>" alt="Avatar" style="width:100%;height:315px;" >
+                    <div class="container" style="width: 100%;">
+                        <h5 style="height: 25px"><b><%=movie_result.getName()%>  <%=movie_result.getYear()%>  </b></h5>
+                            <p>
+                                <a href="#" style=" width: 100%;height:30px" class="btn btn-success"><span class="glyphicon glyphicon-info-sign"></span> View Details</a>
+                            </p>
+
+                            <p style="margin-top:5px;text-align:center" >
+                                <a href="#" style="height:30px" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Cart</a> <a href="#" style="height:30px" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span> Wish List</a>
+                            </p>
+
+                    </div>
+                </div>
+        <%
+            }
+        %>
         <%
 // retrieve your list from the request, with casting 
             

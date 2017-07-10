@@ -68,7 +68,7 @@ public class Login extends HttpServlet {
                 session.setAttribute("zipcode", user.getZipcode());
                 session.setMaxInactiveInterval(180);
                 request.getServletContext().setAttribute("My_Session", session);
-                request.getRequestDispatcher("loggedHome.jsp").forward(request, response);
+                request.getRequestDispatcher("/Home").forward(request, response);
             }
         
         }else if(admin!=null){
@@ -84,7 +84,7 @@ public class Login extends HttpServlet {
                 request.getRequestDispatcher("addMovie.jsp").forward(request, response);
             }
         }else{
-                response.sendRedirect("home.jsp");
+                response.sendRedirect("/Home");
             
 
         }
